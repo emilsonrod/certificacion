@@ -56,16 +56,69 @@ namespace ConsoleApplication1
             //    mayor = numero4;
             //Console.WriteLine("El mayor de todos es {0}", mayor);
 
-            int mayor = 0;
+            //calcular el primer mayor y segundo mayor
+            //int mayor = 0;
+            //int segundoMayor = 0;
+            //int numero;
+            //string message;
+            //do
+            //{
+            //    Console.WriteLine("Ingrese un numero");
+            //    numero = Convert.ToInt32(Console.ReadLine());
+            //    if (numero > mayor)
+            //    {
+            //        segundoMayor = mayor;
+            //        mayor = numero;
+            //    }
+            //    else if (numero > segundoMayor)
+            //    {
+            //        segundoMayor = numero;
+            //    }                    
+            //} while (numero > 0);
+
+            //message = mayor != 0 ? string.Format("El mayor es {0} el segundo mayor es {1}",
+            //    mayor, segundoMayor):"No se ingresaron datos validos";
+            //Console.WriteLine(message);
+
+            //dado un intervalo mostrar los multiplos de un numero en el rango
+            //int limiteInferior = Convert.ToInt32(Console.ReadLine());
+            //int limiteSuperior = Convert.ToInt32(Console.ReadLine());
+            //int numeroMultiplo = Convert.ToInt32(Console.ReadLine());
+            //if(limiteInferior % numeroMultiplo != 0)
+            //    limiteInferior = ((limiteInferior/numeroMultiplo) + 1) * numeroMultiplo;
+
+            //for (; limiteInferior <= limiteSuperior; limiteInferior = limiteInferior + numeroMultiplo)
+            //{
+            //    Console.WriteLine(limiteInferior);
+            //}
+
+            //encontrar la mayor repeticion
+            int cantidadMayor = 0;
+            int numeroMayor = 0;
+            int cantidad = 1;
+            int anteriorNumero = 0;
             int numero;
             do
             {
-                Console.WriteLine("Ingrese un numero");
                 numero = Convert.ToInt32(Console.ReadLine());
-                mayor = numero > mayor ? numero : mayor;
+                //if (numero == anteriorNumero)
+                //{
+                //    cantidad++;
+                //    numeroMayor = numero;
+                //}
+                //else
+                //{
+                //    cantidad = 1;
+                //}
+                cantidad = numero == anteriorNumero ? cantidad + 1 : 1;
+                if (cantidad > cantidadMayor)
+                {
+                    cantidadMayor = cantidad;
+                    numeroMayor = numero;
+                }
+                anteriorNumero = numero;
             } while (numero > 0);
-
-            Console.WriteLine("El mayor es {0}", mayor);
+            Console.WriteLine("el numero {0} se repitio {1}", numeroMayor, cantidadMayor);
         }
     }
 }
